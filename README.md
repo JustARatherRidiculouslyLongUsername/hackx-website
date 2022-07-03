@@ -1,11 +1,24 @@
-# HackX Website
+# [Hack-X Website](https://hack-x.ml/)
 
-This repository contains the source code of the official HackX website.
+### Who are we?
+We are group of individuals who are looking to change the way students think about Hacking, Not something negative, but something that people do to create a safer and a more secure web experience.
 
-### Getting Started
+We at HACK-X learn How to Hack ethically and under the umbrella of the law.
 
-First, run the development server:
+-----
 
+This repository contains the source code of the official Hack-X Club website.
+
+
+### Installation
+
+First, clone this repository and install the dependencies:
+```bash
+git clone https://github.com/JustARatherRidiculouslyLongUsername/hackx-website.git
+npm install -y
+```
+
+Then run the development server:
 ```bash
 npm run dev
 ```
