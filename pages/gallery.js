@@ -1,5 +1,6 @@
-import { Box,ImageList,ImageListItem } from '@mui/material'
+import { Box,ImageList,ImageListItem,Backdrop, Card } from '@mui/material'
 import Head from 'next/head'
+import { useState } from 'react'
 
 const itemData=[
   "/img1.jpg",
@@ -14,6 +15,10 @@ const itemData=[
 ]
 
 export default function Gallery() {
+
+  const [backopen,setback]=useState(false);
+  const [img_open,setimg]=useState("");
+
   return (
     <>
       <Head>
@@ -25,7 +30,7 @@ export default function Gallery() {
 
       <ImageList cols={3} rowHeight={400} sx={{overflow:"hidden"}}>
         {itemData.map((item) => (
-          <ImageListItem>
+          <ImageListItem key={item} onClick={()=>{setimg(item);setback(true)}} >
             <img
               src={item}
               loading="lazy"
@@ -33,6 +38,19 @@ export default function Gallery() {
           </ImageListItem>
         ))}
       </ImageList>
+
+      <Backdrop
+        
+        open={backopen}
+        onClick={()=>{setback(false)}}
+      >
+          <Card>
+            <img
+              src={img_open}
+              style={{objectFit:"fill",height:"50rem"}}
+            />
+          </Card>
+      </Backdrop>
     </>
   )
 }
